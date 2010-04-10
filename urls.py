@@ -12,7 +12,7 @@ admin.autodiscover()
 urlpatterns = parser.patterns('',
     (r'', include('yadba.urls')),
     (r'admin/doc/!', include('django.contrib.admindocs.urls')),
-    (r'admin/(.*)!', admin.site.root),
+    (r'admin/!', include(admin.site.urls)),
 )
 
 if settings.DEBUG:

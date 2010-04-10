@@ -1,15 +1,11 @@
+{% extends "base.html" %}
 {% load markup %}
-<DOCTYPE html>
-<html>
-  <head>
-    <title>Wraithan's Blog of Amazing Stuff!</title>
-    <link rel="stylesheet" href="media/css/style.css" type="text/css">
-  </head>
-  <body>
-    <div id="wrapper">
+
+{% block content %}
+{% for entry in entries_list %}
       <div class="blog-title"><h2>{{ entry.title }}</h2></div>
       <div class="blog-date"><p>{{ entry.date_posted|date:"g:iA D d N Y" }}</p></div>
       <div class="blog-entry">{{ entry.body|restructuredtext }}</div>
-    </div>
-  </body>
-</html>
+{% endfor %}
+{% endblock %}
+

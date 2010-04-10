@@ -1,5 +1,28 @@
+#header {
+    text-align: center;
+}
+
+#header h1 {
+    margin-bottom: 0px;
+}
+
+#header h2 {
+    margin-top: 0px;
+}
+
+span.heart {
+    color: #FF0000;
+}
+
 #wrapper {
-    width:960px;
+    width: 960px;
+    border-width: 2px;
+    border-color: #000000;
+    border-style: solid;
     background-color: #DFDFDF;
     margin: auto;
+}
+
+#content {
+    margin: 10px;
 }

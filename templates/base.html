@@ -7,11 +7,12 @@
   <body>
     <div id="wrapper">
       <div id="header">
-	<h1>&lt;3 Software</h1>
-	<h2>Software with a Heart</h2>
+	<h1><span class="heart">&lt;3</span> Software</h1>
+	<h2>Software with a <span class="heart">Heart</span></h2>
       </div>
-      {% block content %}
-      {% endblock %}
+      <div id="content">
+      {% block content %}{% endblock %}
+      </div>
     </div>
   </body>
 </html>

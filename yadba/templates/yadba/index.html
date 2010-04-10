@@ -1,0 +1,17 @@
+{% load markup %}
+<DOCTYPE html>
+<html>
+  <head>
+    <title>Wraithan's Blog of Amazing Stuff!</title>
+    <style type="text/css">
+      #wrapper {width:960px;background-color:#DFDFDF;margin:auto;}
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="blog-title"><h2>{{ entry.title }}</h2></div>
+      <div class="blog-date"><p>{{ entry.date_posted|date:"g:iA D d N Y" }}</p></div>
+      <div class="blog-entry">{{ entry.body|restructuredtext }}</div>
+    </div>
+  </body>
+</html>

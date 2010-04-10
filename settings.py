@@ -1,24 +1,13 @@
-# Django settings for wiag_blog project.
+# Django settings for ltt_blog project.
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+import os
+rel_path = lambda *x: os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
 
 ADMINS = (
     ('Chris McDonald', 'xwraithanx@gmail.com'),
 )
 
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'sqlite_db',             # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -39,20 +28,17 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = rel_path('media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '43f^n659pdam#ejgkxz_mv)y7=)dcsp9d^t#@h5+532--0dvm*'
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -69,7 +55,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'wiag_blog.urls'
+ROOT_URLCONF = 'ltt_blog.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -92,3 +78,9 @@ INSTALLED_APPS = (
 RESTRUCTUREDTEXT_FILTER_SETTINGS = {
         'doctitle_xform': False
 }
+
+try:
+    from local_settings import *
+except ImportError:
+    import sys
+    sys.stderr.write("local_settings.py could not be loaded, either does not exist or there is a syntax error.\n")

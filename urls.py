@@ -9,7 +9,7 @@ url = parser.url
 admin.autodiscover()
 
 urlpatterns = parser.patterns('',
-    (r'', include('wiag_blog.yadba.urls')),
+    (r'', include('yadba.urls')),
     (r'admin/doc/!', include('django.contrib.admindocs.urls')),
     (r'admin/(.*)!', admin.site.root),
 )

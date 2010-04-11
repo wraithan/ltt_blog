@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from tagging.fields import TagField
 from tagging.models import Tag
@@ -9,6 +10,9 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('category-rss', kwargs={'category':self.name})
 
 
 class Entry(models.Model):
@@ -27,3 +31,6 @@ class Entry(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog-index')

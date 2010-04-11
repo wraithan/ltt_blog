@@ -10,7 +10,7 @@ url = parser.url
 admin.autodiscover()
 
 urlpatterns = parser.patterns('',
-    (r'', include('yadba.urls')),
+    (r'!', include('yadba.urls')),
     (r'admin/doc/!', include('django.contrib.admindocs.urls')),
     (r'admin/!', include(admin.site.urls)),
 )

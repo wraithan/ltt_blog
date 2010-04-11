@@ -16,7 +16,7 @@ class LatestEntries(Feed):
         return "All Posts"
 
     def link(self, obj):
-        return reverse('blog-full-feed')
+        return reverse('blog-full-rss')
 
     def description(self, obj):
         return "All posts on the blog"

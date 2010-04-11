@@ -26,3 +26,25 @@ span.heart {
 #content {
     margin: 10px;
 }
+
+#footer {
+    margin-bottom: 10px;
+}
+
+ul.horizontal {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+ul.horizontal li {
+    float: left;
+}
+
+ul.horizontal a {
+    padding-right: 32px;
+    padding-left: 10px;
+    display: block;
+    margin: auto;
+    line-height: 16px;
+}

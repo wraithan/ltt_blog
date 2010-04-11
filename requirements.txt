@@ -6,3 +6,4 @@ docutils
 pycrypto
 wsgiref
 psycopg2
+south

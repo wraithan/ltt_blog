@@ -9,6 +9,6 @@ url = parser.url
 
 urlpatterns = parser.patterns('yadba.views',
     url(r'', 'blog_index', name='blog-index'),
-    url(r'blog/{year:year}/{month:month}/{slug:slug}', 'blog_view_entry', name='blog-view-entry'),
+    url(r'blog/{year:year}/{month:day}/{slug:slug}/', 'blog_view_entry', name='blog-view-entry'),
     url(r'blog/{category:word}/rss/', LatestEntriesByCategory(), name='category-rss'),
 )

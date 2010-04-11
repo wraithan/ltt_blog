@@ -17,6 +17,7 @@ class Category(models.Model):
 
 class Entry(models.Model):
     title = models.CharField(max_length=255)
+    slug = models.SlugField()
     body = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
@@ -33,7 +34,7 @@ class Entry(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog-index')
+        return reverse('blog-view-entry', kwargs={'year':self.date_posted.year, 'month':self.date_posted.month, 'slug':self.slug})
 
     class Meta:
         ordering = ('-date_posted',)

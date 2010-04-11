@@ -74,6 +74,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'tagging',
     'yadba',
+    'south',
 )
 
 RESTRUCTUREDTEXT_FILTER_SETTINGS = {

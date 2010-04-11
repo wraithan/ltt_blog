@@ -34,7 +34,6 @@ span.heart {
 ul.horizontal {
     display: inline;
     list-style-type: none;
-    padding-right: 20px;
 }
 
 ul.horizontal li {
@@ -44,7 +43,10 @@ ul.horizontal li {
 ul.horizontal a {
     padding-right: 32px;
     padding-left: 10px;
-    display: block;
     margin: auto;
     line-height: 16px;
+}
+
+ul.horizontal img {
+    border: none;
 }

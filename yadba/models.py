@@ -12,7 +12,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('category-rss', kwargs={'category':self.name})
+        return reverse('blog-category-rss', kwargs={'category':self.name})
 
 
 class Entry(models.Model):

@@ -1,7 +1,28 @@
 from django.contrib.syndication.views import Feed, FeedDoesNotExist
+from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 
 from models import Category, Entry
+
+class LatestEntries(Feed):
+    
+    def get_object(self, request):
+        return Entry.objects.all()
+
+    def items(self, obj):
+        return obj[:30]
+
+    def title(self, obj):
+        return "All Posts"
+
+    def link(self, obj):
+        return reverse('blog-full-feed')
+
+    def description(self, obj):
+        return "All posts on the blog"
+
+    def item_description(self, item):
+        return item.body
 
 class LatestEntriesByCategory(Feed):
     

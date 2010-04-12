@@ -1,13 +1,13 @@
 from django.contrib.syndication.views import Feed, FeedDoesNotExist
 from django.core.urlresolvers import reverse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, get_list_or_404
 
 from models import Category, Entry
 
 class LatestEntries(Feed):
-    
+
     def get_object(self, request):
-        return Entry.objects.all()
+        return get_list_or_404(Entry)
 
     def items(self, obj):
         return obj[:30]

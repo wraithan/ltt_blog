@@ -31,7 +31,7 @@ body {
     float: right;
     border-left: 2px dotted #DFDFDF;
     border-bottom: 2px dotted #DFDFDF;
-    width: 240;
+    width: 240px;
     padding: 0px 0px 10px 10px;
     margin-left: 10px;
 }
@@ -55,7 +55,7 @@ a:visited {
 }
 
 a:hover {
-    color: darkblue;
+    color: navy;
     text-decoration: underline;
 }
 

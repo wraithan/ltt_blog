@@ -34,7 +34,7 @@ class Entry(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog-view-entry', kwargs={'year':self.date_posted.year, 'month':self.date_posted.month, 'slug':self.slug})
+        return reverse('blog-entry', kwargs={'year':self.date_posted.year, 'month':self.date_posted.month, 'slug':self.slug})
 
     class Meta:
         ordering = ('-date_posted',)

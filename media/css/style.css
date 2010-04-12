@@ -13,6 +13,10 @@ body {
 
 }
 
+#header a {
+    color: black;
+}
+
 #header h1 {
     padding: 0px;
     margin: 0px;

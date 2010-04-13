@@ -24,6 +24,7 @@ class LatestEntries(Feed):
     def item_description(self, item):
         return item.body
 
+
 class LatestEntriesByCategory(Feed):
     
     def get_object(self, request, category):

@@ -8,3 +8,5 @@ lib64
 include/
 src/
 local_settings.py
+pip-log.txt
+build/

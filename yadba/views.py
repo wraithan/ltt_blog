@@ -6,13 +6,13 @@ from yadba.models import Entry, Category
 
 
 def blog_index(request):
-    entries_list = Entry.objects.all()
+    entries_list = Entry.objects.filter(draft=False)
     return direct_to_template(request, template='yadba/index.html', extra_context={'entries_list': entries_list})
 
 def blog_entry(request, year, month, slug):
-    entries_list = get_list_or_404(Entry, date_posted__year=year, date_posted__month=month, slug=slug)
+    entries_list = get_list_or_404(Entry, draft=False, date_posted__year=year, date_posted__month=month, slug=slug)
     return direct_to_template(request, template='yadba/index.html', extra_context={'entries_list': entries_list})
 
 def blog_category(request, category):
-    entries_list = get_list_or_404(Entry, categories__name=category)
+    entries_list = get_list_or_404(Entry, draft=False, categories__name=category)
     return direct_to_template(request, template='yadba/index.html', extra_context={'entries_list': entries_list})

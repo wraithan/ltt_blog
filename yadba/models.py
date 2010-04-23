@@ -1,5 +1,6 @@
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.template.defaultfilters import slugify
 from tagging.fields import TagField
 from tagging.models import Tag
 
@@ -28,7 +29,7 @@ class Entry(models.Model):
     draft = models.BooleanField(default=True)
     tags = TagField()
 
-    def save(self):
+    def save(self, *args, **kwargs):
         slug = slugify(self.title)
         super(Entry, self).save(*args, **kwargs)
     

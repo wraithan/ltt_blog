@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8"> 
     <meta name="google-site-verification" content="DwqvyV4wvAfwVUmzpmcsJ8O3PBBUT8UyWkxMslGCp5A" />
+    {% block head %}
     <title>&lt;3 Software &raquo; {% block title %}Home{% endblock %}</title>
     <link rel="stylesheet" href="/media/css/style.css" type="text/css">
+    {% endblock %}
   </head>
   <body>
     <div id="wrapper">
@@ -15,12 +17,14 @@
       </div>
       <div id="content">
 	<div id="sidebar">
+	  {% block sidebar %}
 	  <ul>
 	    <li><a href="{% url blog-full-rss %}"><img src="/media/images/feed-icon-16px.png"></a> <a href="{% url blog-index %}">All Posts</a></li>
 	    {% for category in category_list %}
 	    <li><a href="{% url blog-category-rss category %}"><img src="/media/images/feed-icon-16px.png"></a> <a href="{% url blog-category category %}">{{ category }} Category</a></li>
 	    {% endfor %}
 	  </ul>
+	  {% endblock %}
 	</div>
 	{% block content %}{% endblock %}
       </div>

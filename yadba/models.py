@@ -43,7 +43,7 @@ class Entry(models.Model):
         if self.draft:
             return "DRAFT -- %s -- DRAFT" % self.title
         else:
-            self.title
+            return self.title
 
     def get_absolute_url(self):
         return reverse('blog-entry', kwargs={'year':self.date_posted.year, 'month':self.date_posted.month, 'slug':self.slug})

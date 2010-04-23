@@ -40,7 +40,10 @@ class Entry(models.Model):
         return Tag.objects.get_for_objects(self)
 
     def __unicode__(self):
-        return self.title
+        if self.draft:
+            return "DRAFT -- %s -- DRAFT" % self.title
+        else:
+            self.title
 
     def get_absolute_url(self):
         return reverse('blog-entry', kwargs={'year':self.date_posted.year, 'month':self.date_posted.month, 'slug':self.slug})

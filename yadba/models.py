@@ -14,6 +14,9 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('blog-category-rss', kwargs={'category':self.name})
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
 
 class Entry(models.Model):
     title = models.CharField(max_length=255)
@@ -43,3 +46,5 @@ class Entry(models.Model):
 
     class Meta:
         ordering = ('-date_posted',)
+        verbose_name = 'Blog Entry'
+        verbose_name_plural = 'Blog Entries'

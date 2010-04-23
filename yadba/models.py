@@ -22,7 +22,12 @@ class Entry(models.Model):
     date_posted = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField(Category)
+    draft = models.BooleanField(default=True)
     tags = TagField()
+
+    def save(self):
+        slug = slugify(self.title)
+        super(Entry, self).save(*args, **kwargs)
     
     def set_tags(self, tags):
         Tag.objects.update_tags(self, tags)

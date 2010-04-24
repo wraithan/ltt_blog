@@ -1,0 +1,8 @@
+* Pages
+** TODO About
+** TODO Categories
+** TODO Projects
+* Sidebar
+** TODO Github RSS
+** TODO Blogroll
+   Ordered by most recent post (calculated once a day)

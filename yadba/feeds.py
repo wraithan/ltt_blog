@@ -7,7 +7,7 @@ from models import Category, Entry
 class LatestEntries(Feed):
 
     def get_object(self, request):
-        return get_list_or_404(Entry)
+        return get_list_or_404(Entry, draft=False)
 
     def items(self, obj):
         return obj[:30]
@@ -31,7 +31,7 @@ class LatestEntriesByCategory(Feed):
         return get_object_or_404(Category, name=category)
 
     def items(self, obj):
-        return Entry.objects.filter(categories=obj)[:30]
+        return Entry.objects.filter(categories=obj, draft=False)[:30]
 
     def title(self, obj):
         return "Posts in the %s category." % obj.name

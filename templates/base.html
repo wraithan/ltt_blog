@@ -28,7 +28,15 @@
 	</div>
 	{% block content %}{% endblock %}
       </div>
+      <hr>
       <div id="footer">
+	{% block footer %}
+	<p>Powered by: 
+	  {% for site in powered_by %}
+	  <a href="{{ site.url }}">{{ site.name }}</a> 
+	  {% endfor %}
+	</p>
+	{% endblock %}
       </div>
     </div>
     <script type="text/javascript">

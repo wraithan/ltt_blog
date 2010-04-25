@@ -41,6 +41,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.contrib.messages.context_processors.messages',
     'yadba.context_processors.sidebar',
+    'yadba.context_processors.powered_by',
 )
 
 

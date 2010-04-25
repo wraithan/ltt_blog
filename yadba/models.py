@@ -30,7 +30,7 @@ class Entry(models.Model):
     tags = TagField()
 
     def save(self, *args, **kwargs):
-        slug = slugify(self.title)
+        self.slug = slugify(self.title)
         super(Entry, self).save(*args, **kwargs)
     
     def set_tags(self, tags):
@@ -52,3 +52,15 @@ class Entry(models.Model):
         ordering = ('-date_posted',)
         verbose_name = 'Blog Entry'
         verbose_name_plural = 'Blog Entries'
+
+class PoweredBy(models.Model):
+    name = models.CharField(max_length=255)
+    url = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.name
+    
+    class Meta:
+        ordering = ('id',)
+        verbose_name = 'Project that power this one'
+        verbose_name_plural = 'Projects that power this one'

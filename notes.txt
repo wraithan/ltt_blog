@@ -1,0 +1,5 @@
+Rob Hudson: 
+http://djangoadvent.com/1.2/syndication-gets-classy/
+
+Docs:
+http://docs.djangoproject.com/en/dev/ref/contrib/syndication/
